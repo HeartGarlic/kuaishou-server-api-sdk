@@ -42,3 +42,5 @@
 		t.Errorf("PayCallbackCheckSignature got a error %s", err.Error())
 		return
 	}
+
+#### 4. 退款接口 & 结算接口 尚未执行单元测试
