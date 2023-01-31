@@ -40,3 +40,22 @@ func PostJSON(uri string, obj interface{}) ([]byte, error) {
 	}
 	return ioutil.ReadAll(response.Body)
 }
+
+// JsonStructToMap ...
+func JsonStructToMap(content interface{}) (map[string]interface{}, error) {
+	var name map[string]interface{}
+	if marshalContent, err := json.Marshal(content); err != nil {
+		return name, err
+	} else {
+		d := json.NewDecoder(bytes.NewReader(marshalContent))
+		d.UseNumber() // 设置将float64转为一个number
+		if err := d.Decode(&name); err != nil {
+			return name, err
+		} else {
+			for k, v := range name {
+				name[k] = v
+			}
+		}
+	}
+	return name, nil
+}

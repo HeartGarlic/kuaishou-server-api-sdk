@@ -24,6 +24,13 @@
 		ExpireTime:  300,
 	}
 	res, err := kuaiShou.PayCreateOrder(params)
+#### 1.1 支付回调解析
+    jsonStr := "{\"data\":{\"channel\":\"WECHAT\",\"out_order_no\":\"1627293310922demo\",\"attach\":\"小程序demo得\",\"status\":\"SUCCESS\",\"ks_order_no\":\"121112500031787702250\",\"order_amount\":1,\"trade_no\":\"4323300968202201201545417324\",\"extra_info\":\"\",\"enable_promotion\":true,\"promotion_amount\":1},\"biz_type\":\"PAYMENT\",\"message_id\":\"fa578923-347b-4158-9ae8-06c54d485da3\",\"app_id\":\"ks682576822728417112\",\"timestamp\":1627293368719}"
+	response, err := kuaiShou.PayCallbackResponse("123", jsonStr, false)
+	if err != nil {
+		t.Errorf("PayCallbackResponse got a error %s", err.Error())
+		return
+	}
 
 #### 2. 订单信息查询
     order, err := kuaiShou.QueryOrder("123013100433623410019")
