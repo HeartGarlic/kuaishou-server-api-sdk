@@ -226,7 +226,7 @@ type QueryOrderResponse struct {
 type PaymentInfo struct {
 	TotalAmount     int       `json:"total_amount,omitempty"`
 	PayStatus       string    `json:"pay_status,omitempty"`
-	PayTime         string    `json:"pay_time,omitempty"`
+	PayTime         int       `json:"pay_time,omitempty"`
 	PayChannel      string    `json:"pay_channel,omitempty"`
 	OutOrderNo      string    `json:"out_order_no,omitempty"`
 	KsOrderNo       string    `json:"ks_order_no,omitempty"`
