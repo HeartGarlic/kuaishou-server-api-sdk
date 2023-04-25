@@ -224,15 +224,15 @@ type QueryOrderResponse struct {
 }
 
 type PaymentInfo struct {
-	TotalAmount     int       `json:"total_amount,omitempty"`
-	PayStatus       string    `json:"pay_status,omitempty"`
-	PayTime         int       `json:"pay_time,omitempty"`
-	PayChannel      string    `json:"pay_channel,omitempty"`
-	OutOrderNo      string    `json:"out_order_no,omitempty"`
-	KsOrderNo       string    `json:"ks_order_no,omitempty"`
-	ExtraInfo       ExtraInfo `json:"extra_info,omitempty"`
-	PromotionAmount int       `json:"promotion_amount,omitempty"`
-	OpenId          string    `json:"open_id,omitempty"`
+	TotalAmount     int    `json:"total_amount,omitempty"`
+	PayStatus       string `json:"pay_status,omitempty"`
+	PayTime         int    `json:"pay_time,omitempty"`
+	PayChannel      string `json:"pay_channel,omitempty"`
+	OutOrderNo      string `json:"out_order_no,omitempty"`
+	KsOrderNo       string `json:"ks_order_no,omitempty"`
+	ExtraInfo       string `json:"extra_info,omitempty"`
+	PromotionAmount int    `json:"promotion_amount,omitempty"`
+	OpenId          string `json:"open_id,omitempty"`
 }
 
 type ExtraInfo struct {
